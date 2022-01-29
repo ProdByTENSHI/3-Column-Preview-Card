@@ -74,4 +74,22 @@ select {
   }
 }
 
+/* VARIABLES */
+:root {
+  --color-primary-sedans: hsl(31, 77%, 52%);
+  --color-primary-suvs: hsl(184, 100%, 22%);
+  --color-primary-luxuries: hsl(179, 100%, 13%);
+
+  --color-neutral-paragraphs: hsla(0, 0%, 100%, 0.75);
+  --color-neutral-main: hsl(0, 0%, 95%);
+
+  --fs-default: 0.9375rem;
+
+  --fw-light: 400;
+  --fw-bold: 700;
+}
+
 /* DESKTOP */
+body {
+  background-color: var(--color-neutral-main);
+}
