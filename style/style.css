@@ -74,6 +74,13 @@ select {
   }
 }
 
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+/* font-family: 'Lexend Deca', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+/* font-family: 'Big Shoulders Display', cursive; */
+
 /* VARIABLES */
 :root {
   --color-primary-sedans: hsl(31, 77%, 52%);
@@ -87,9 +94,133 @@ select {
 
   --fw-light: 400;
   --fw-bold: 700;
+
+  --border-rad: 10px;
 }
 
 /* DESKTOP */
 body {
+  height: 100vh;
   background-color: var(--color-neutral-main);
+
+  font-family: 'Big Shoulders Display', sans-serif;
+
+  display: grid;
+  justify-content: center;
+  place-items: center;
+}
+
+.container {
+  width: 60vw;
+  height: 60%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+
+  gap: 0;
+}
+
+.card {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 10%;
+}
+
+.sedans {
+  background-color: var(--color-primary-sedans);
+  border-radius: var(--border-rad) 0px 0px var(--border-rad);
+}
+
+.suvs {
+  background-color: var(--color-primary-suvs);
+}
+
+.luxuries {
+  background-color: var(--color-primary-luxuries);
+  border-radius: 0px var(--border-rad) var(--border-rad) 0px;
+}
+
+.card__ico {
+  width: 20%;
+}
+
+.card__headline {
+  font-weight: var(--fw-bold);
+  color: var(--color-neutral-main);
+  text-align: left;
+  margin-top: 10%;
+}
+
+.card__description {
+  width: 75%;
+
+  line-height: 1.75rem;
+  word-break: break-all;
+
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-default);
+  text-align: left;
+
+  color: var(--color-neutral-paragraphs);
+
+  margin-top: 10%;
+}
+
+.card__cta-button {
+  width: 50%;
+  margin-top: 50%;
+  padding: 5%;
+
+  font-weight: var(--fw-bold);
+
+  border: 2px solid var(--color-neutral-main);
+  border-radius: 25px;
+
+  cursor: pointer;
+}
+
+.sedans button {
+  color: var(--color-primary-sedans);
+}
+
+.suvs button {
+  color: var(--color-primary-suvs);
+}
+
+.luxuries button {
+  color: var(--color-primary-luxuries);
+}
+
+.card__cta-button:hover {
+  background-color: transparent;
+  color: var(--color-neutral-main);
+}
+
+/* MOBILE: 375px */
+@media screen and (max-width: 500px) {
+  .container {
+    width: 90vw;
+
+    margin-top: -100%;
+    margin-bottom: 50%;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .sedans {
+    border-radius: var(--border-rad) var(--border-rad) 0px 0px;
+  }
+
+  .luxuries {
+    border-radius: 0px 0px var(--border-rad) var(--border-rad);
+  }
+
+  .card__description {
+    word-break: break-word;
+  }
 }
